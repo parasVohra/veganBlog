@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title The VeganHood
+        link(rel='stylesheet', type="text/css", href ='./css/index.css')
+        script(language="JavaScript" type="text/JavaScript" src="/js/jquery.min.js")
+        script(language="JavaScript" type="text/JavaScript" src="/js/index.js")
+    body(onload="text();")
+        nav 
+            .homeTitle The VeganHood
+            .navLinks 
+                a(href="/") Home
+                a(href="/blog") Blog
+
+        .menu(onClick="showNavBar()") Vegan Hood
+            .menuBtn 
+                .firstBar
+                .secondBar
+                .thirdBar
+                .fourthBar
+
+        .mobileMenu
+            a(href="/") Home
+            a(href="/blog") Blog
+
+        block content
+       
+        footer
+         p copyright &copy; 2018

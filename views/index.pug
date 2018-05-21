@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    content
+        .homeContent
+            .homeText
+        
+        .whatsNew
+            .leftBox What's
+            .rightBox
+                .newBlogBox(onclick="goToBlog()") <span style="font-size:4vw; "> New </span> Blog #1 What is veganism?
+                    img(src="Images/veganThumb.jpg", class="newThumImage")
+                .nextBlogBox  <span style="font-size:4vw; ">Coming  </span> Blog #2 Transitioning to veganism
+                    img(src="Images/Transitionthumb.jpg", class="nextThumImage")
