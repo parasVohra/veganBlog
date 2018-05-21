@@ -35,7 +35,10 @@ function  text(){
 
 
 function goToBlog(){
-    window.open("blog");
+    window.open("/blog","_self");
+}
+function goToBlog2(){
+    window.open("/blog2","_self");
 }
 
 

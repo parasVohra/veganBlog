@@ -34,10 +34,15 @@ app.get('/blogList', function(req, res){
         title: 'blogList page'
     })
 });
+app.get('/blog2', function(req, res){
+    res.render('blog2', {
+        title: 'blogList page'
+    })
+});
 
 
 
 //start server
-app.listen(80, function(){
+app.listen(8081, function(){
     console.log('server started at 3000')
 });

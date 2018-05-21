@@ -1,4 +1,11 @@
 extends layout
 
 block content
-    h1 #{title}
+    .blogContent
+        .blogBox1(onclick="goToBlog()")
+            .blogBoxTitle What is veganism?
+            .blogBoxContent Veganism may be defined as a way of living that seeks to exclude, as far as possible and practical, all forms of exploitation of, and cruelty to, animals for food, clothing, or any other purpose.
+        .blogBox2(onclick="goToBlog2()")
+            .blogBoxTitle Transitioning to veganism
+            .blogBoxContent Tips on going vegan
+        .sideBox

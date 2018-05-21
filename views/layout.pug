@@ -4,15 +4,20 @@ html
         title The VeganHood
         link(rel='stylesheet', type="text/css", href ='./css/index.css')
         script(language="JavaScript" type="text/JavaScript" src="/js/jquery.min.js")
+        meta(name = "viewport", content="width=device-width, initial-scale=1.0")
         script(language="JavaScript" type="text/JavaScript" src="/js/index.js")
+        link(href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet")
     body(onload="text();")
         nav 
-            .homeTitle The VeganHood
+            .homeTitle 
+                a(href="/", style="color: antiquewhite; ") The VeganHood
             .navLinks 
                 a(href="/") Home
-                a(href="/blog") Blog
+                a(href="/blogList") Blog
 
-        .menu(onClick="showNavBar()") Vegan Hood
+        .menu(onClick="showNavBar()") 
+            a(href="/", style="color: antiquewhite; ") The VeganHood
             .menuBtn 
                 .firstBar
                 .secondBar
@@ -21,7 +26,7 @@ html
 
         .mobileMenu
             a(href="/") Home
-            a(href="/blog") Blog
+            a(href="/blogList") Blog
 
         block content
        
