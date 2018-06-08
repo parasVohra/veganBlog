@@ -1,0 +1,69 @@
+extends layout
+
+block content
+    .blogPageText(style="font-family: 'Love Ya Like A Sister', cursive;")
+        h1 Still need a little more convincing?
+        p One of the main benefits of a vegan lifestyle is the longevity of life that it affords us by keeping us healthier than ever. Our bodies transform in amazing ways on a <strong>Plant-based diet</strong>. This fact is backed up by evidence provided in studies that we will be looking at. Several researchers and top doctors have conducted studies into the effects of our diet on the quality of our life and our body’s ability to fight and withstand diseases. Changes occur in our bodies and these will of course vary between everyone, and will depend on the lifestyle he/she had in the past.
+        p However, research proves that a vegan diet is the healthiest diet for you—In terms of longevity. This diet has been received critical acclaim for achieving the feat of <strong>reversing</strong> some of the <strong>most deadliest diseases</strong> and leading human killers of our time. As <strong>Dr. Michael Greger</strong> put it <strong>“The side effects would be NOT having to take drugs at all”</strong>.
+        img(src="/Images/plantBased.jpg", class="blogThreeImg")
+        h2 Let’s start, shall we?
+        p First and foremost, let’s talk about the <strong>dangers of meat</strong>—What benefits can we get just by eliminating it completely out of our diet. The key word here is <strong>IGF-1</strong>. Yes, some here may know that these are proteins that are actually helping our muscles to grow. This is true, obviously because it is a growth hormone. Although, It is also <strong>involved in the growth and spread of every cancer across the board</strong>—which is why it is considered as <strong>group 1 carcinogen</strong>. Dropping off meat eliminates animal proteins that increases our IGF-1 levels and by eating whole foods, it immediately kills the cancer cells. This is why a whole food plant based diet is surely an easy way to reduce our problems of dying with cancer. Eating these animal proteins cause inflammations all over our bodies—that all kinds of diseases love. Link of the study will be on the reference page.
+        p What else will happen following this lifestyle. Well, a study show that in just 3 weeks—arteries will clear up and decreases your risk of heart disease. It also results to better blood flow which means other problems caused by clogged arteries can be cured as well. To name a few more health benefits of a vegan diet: it also <strong>lowers the risks of hypertension, diabetes, cancer, hypothyroidism, Parkinson’s disease, obesity, Alzheimer’s disease, multiple sclerosis</strong>. The list goes on. Goodbye heart problems! 💔
+        p How about dairy products? Just day 1-3 of laying off your milk and butter will take off the mammalian hormones that messes up your own hormonal system. This means you can get rid of risks on diseases caused by hormonal imbalances—in both men and women. According to the research drinking Cow’s milk <strong>dramatically increases estrone in our body, and lowers testosterone levels</strong>. This <strong>causes hypertension, hypothyroidism, etc</strong>. Moreover, consuming dairy products are correlated with some cancers involving high calcium intake. Yes, calcium is not all that good in our body when taken in excessive amounts. More on that on the future posts.
+        img(src="/Images/bodyTransformation.jpg", class="blogThreeImg")
+        h2 As promised, body transformation on a vegan diet
+        p I’ll make this easy for you. Go to youtube and just search “Vegan transformations”. I can promise you right now—your brains will scatter on the floor with the results people get following this healthy and cruelty free lifestyle. From “fat to fit” to “skinny to fit”—anything is possible on a plant based diet. Vegans will tell you—they become happier transitioning into a vegan. Why is that? It is because they can see changes. Changes in both internal and external physical body. I for one can personally stand witness to how our lives changed moving into this diet. My vegan brother shredded 10kgs of excess weight and for myself, I gained 5kg already in just 4 months. We will talk about our transformation next time. For now, try considering a high carb-low fat diet. Makes sense right? You gain more energy with little to no fat. Who doesn’t want that.
+        p How about that for convincing? Always remember, that this diet is also known as “Eat as much as you want” diet. Because generally you are just consuming real good food. No question, you can achieve whatever fitspiration you want! So, let’s all be a better, badder, bolder versions of ourselves shall we?
+        p That’s it for this post, every word you read is very much appreciated. Thank you and till next time! 🙏
+
+        h2(style="text-align: left;") Leave Comment
+        .newCommentBox
+            lable(class="lName") Name
+            input(class="name", placeholder="Enter Name")
+            lable(class="lCmt") Comment
+            textarea(name="", cols="30", rows="6" class="commentText", placeholder="Add Comment")
+            .postButton(onclick="submitComment()") SUBMIT
+        
+
+
+        - var common = 'paras' 
+        - var showTimeStamp = function (timeStamp){
+        - var date = new Date();
+        - var fixDate = Date.now();
+        - var secondSpend = Math.floor((Date.now() - timeStamp)/1000)
+        - var minSpend = Math.floor((Date.now() - timeStamp)/60000);
+        - var hourSpend = Math.floor((Date.now() - timeStamp)/(60*60*1000));
+        - var days =  Math.floor(hourSpend / 24) ;
+        - var months =  Math.floor(days / 30);
+        - var years =  Math.floor(months / 12);    
+        -  if (years > 0){
+        -      timePast = years > 1 ? years + " years": years + " year";
+        -  }
+        -  else if(months > 0){
+        -      timePast = months > 1 ? months + " months":  months + " month";
+        -  }
+        -  else if(days > 0 ){
+        -      
+        -      timePast = days > 1 ? days + " days": days + " day";
+        -  }
+        -  else if(hourSpend > 0){
+        -      timePast = hourSpend > 1 ? hourSpend + " hours": hourSpend + " hour";
+        -  }
+        -  else if(minSpend > 0 ){
+        -      timePast = minSpend + " min"
+        -  }
+        -  else{
+        -      timePast = secondSpend + " sec"
+        -  }
+
+        -  return timePast;
+        - }
+
+
+        <br><br><br>
+
+        for item in data.reverse()  
+            .commentDisplayBox 
+                .CommenterName #{item.comment.name}
+                .timeStamp #{showTimeStamp(item.comment.timeStamp)} ago
+                .content #{item.comment.content}

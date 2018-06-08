@@ -9,12 +9,15 @@ html
         link(href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet")
     body(onload="text();")
+        .aleartBox Box
         nav 
             .homeTitle 
                 a(href="/", style="color: antiquewhite; ") The VeganHood
             .navLinks 
                 a(href="/") Home
                 a(href="/blogList") Blog
+                a(href="/references") References
+
 
         .menu(onClick="showNavBar()") 
             a(href="/", style="color: antiquewhite; ") The VeganHood
@@ -27,8 +30,9 @@ html
         .mobileMenu
             a(href="/") Home
             a(href="/blogList") Blog
+            a(href="/references") References
 
         block content
        
         footer
-         p copyright &copy; 2018
+         p(style="text-align:center; ") &copy; 2018 by Pursharth Vohra

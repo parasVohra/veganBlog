@@ -17,3 +17,58 @@ block content
         p Now that we got all that covered, let’s see some tips on how to get started.
 
         h3(onclick="goToBlog2()")  Blog #2 Transitioning to veganism  &#8608;
+        <br><br><br>
+        h2(style="text-align: left;") Leave Comment
+        .newCommentBox
+            lable(class="lName") Name
+            input(class="name", placeholder="Enter Name")
+            lable(class="lCmt") Comment
+            textarea(name="", cols="30", rows="6" class="commentText", placeholder="Add Comment")
+            .postButton(onclick="submitComment()") SUBMIT
+            
+
+
+        - var common = 'paras' 
+        - var showTimeStamp = function (timeStamp){
+        - var date = new Date();
+        - var fixDate = Date.now();
+        - var secondSpend = Math.floor((Date.now() - timeStamp)/1000)
+        - var minSpend = Math.floor((Date.now() - timeStamp)/60000);
+        - var hourSpend = Math.floor((Date.now() - timeStamp)/(60*60*1000));
+        - var days =  Math.floor(hourSpend / 24) ;
+        - var months =  Math.floor(days / 30);
+        - var years =  Math.floor(months / 12);    
+        -  if (years > 0){
+        -      timePast = years > 1 ? years + " years": years + " year";
+        -  }
+        -  else if(months > 0){
+        -      timePast = months > 1 ? months + " months":  months + " month";
+        -  }
+        -  else if(days > 0 ){
+        -      
+        -      timePast = days > 1 ? days + " days": days + " day";
+        -  }
+        -  else if(hourSpend > 0){
+        -      timePast = hourSpend > 1 ? hourSpend + " hours": hourSpend + " hour";
+        -  }
+        -  else if(minSpend > 0 ){
+        -      timePast = minSpend + " min"
+        -  }
+        -  else{
+        -      timePast = secondSpend + " sec"
+        -  }
+
+        -  return timePast;
+        - }
+
+
+        <br><br><br>
+
+        for item in data.reverse()  
+            .commentDisplayBox 
+                .CommenterName #{item.comment.name}
+                .timeStamp #{showTimeStamp(item.comment.timeStamp)} ago
+                .content #{item.comment.content}
+            
+
+        
